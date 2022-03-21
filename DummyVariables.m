@@ -39,3 +39,25 @@ dummysex_male = D_S(:,2) ;
 Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysex_male) array2table(dummysex_female)];
 disp(Traffic_Violations_Table)
 
+%% TIME DUMMY VARIABLES
+
+%make dummy columns (Aisha, 3/21 5:30-6:30PM)
+time_columns = data(:,3);
+time_array = table2array(time_columns);
+time_array(time_array >= 07:00:00 & time_array <=19:00:00) = 01:00:00;
+time_array(time_array < 07:00:00 & time_array >19:00:00) = 02:00:00;
+convertvars(time_array,,categorical)
+    
+    n_time_array = nominal(time_array);
+    
+    D_T = dummyvar(n_time_array);
+    disp(D_T);
+
+    %make dummy variables (Aisha, 3/21 5:30-6:30PM)
+    dummytime_daytime = D_T(:,1);
+    dummytime_nighttime = D_T(:,2) ;
+    Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummytime_daytime) array2table(dummytime_nighttime)];
+    disp(Traffic_Violations_Table)
+    
+    (time >= 7 && time <=19) == day);
+    filename.time_night = data.time((time < 7 && time >19) == night);
