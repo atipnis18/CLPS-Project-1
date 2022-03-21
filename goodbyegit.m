@@ -1,6 +1,8 @@
 filename ='Traffic_Violations100rows.csv';
 datas = readtable(filename);
 data = table2array(datas)
+datas = (datas[:,1]==[])
+datas = (datas[:,2]==[])
 
 %first create the boolean columns for race, gender, and time
 % RACE: for filename(:,37) (seperating the race column)
@@ -52,3 +54,5 @@ xlabel('Race')
 ylabel('Car Searched')
 title('Race as a Predictor for Car Searches (controlled for pullover rate')
 %plotting the relationship between car searching and races
+
+%have been working on this all weekend 03/19-03/30
