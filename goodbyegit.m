@@ -1,8 +1,11 @@
 filename ='Traffic_Violations100rows.csv';
-data = readtable(filename);
+datas = readtable(filename);
+data = table2array(datas)
 
 %first create the boolean columns for race, gender, and time
 % RACE: for filename(:,37) (seperating the race column)
+mask = ismember(data(:,37),['ASIAN'])
+selected_data = (mask,:);%trying to just selected ASIAN but not sure 
 filename.race_asian = data.race(race == 'ASIAN');
 filename.race_black = data.race(race == 'BLACK');
 filename.race_white = data.race(race == 'WHITE');
