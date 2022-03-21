@@ -1,6 +1,8 @@
 filename ='Traffic_Violations100rows.csv';
-data = readtable(filename);
+datas = readtable(filename);
 data = table2array(datas)
+datas = (datas(:,1)= [])
+datas = (datas(:,2)= [])
 
 %first create the boolean columns for race, gender, and time
 % RACE: for filename(:,37) (seperating the race column)
