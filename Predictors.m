@@ -67,19 +67,36 @@ disp(Traffic_Violations_Table)
 
 
 
-%seeing reelationships
-%data = data(~isnan(data.Race),:)
-%data.search = categorical(data.cor);
-%predictor1 = data.("Race");
-%predictor2 = data.("Gender");
-%predictor3 = num2cell(hours(data.("Time Of Stop")));
-%predictor_vector = [predictor1 predictor2 predictor3];
-%[M, dec,stats] = mnrfit(predictor_vector(:1), data.("Search Outcome")
+% %seeing reelationships
+% data = data(~isnan('data.dummyrace_asian' ==0),:);
+% data = data(~isnan('dummysearch_citation' ==0),:);
+% data.dummysearch_citation = categorical(data.dummysearch_citation);
+% predictor1 = data.(dummyrace_asian);
+% predictor2 = data.(dummysearch_citation);
+% predictor_vector = [predictor1 predictor2];
+% [M, dec,stats] = mnrfit(predictor1, predictor2)
 
-%trying to see how asian predicts getting a citation but it did not work
-%predictor1 = data.(dummyrace_asian);
-[M, dec,stats] = mnrfit(data.(dummyrace_asian), data.(dummysearch_citation))
-[M, dec,stats] = mnrfit(data.(dummyrace_black), data.(dummysearch_citation))
-[M, dec,stats] = mnrfit(data.(dummyrace_white), data.(dummysearch_citation))
-[M, dec,stats] = mnrfit(data.(dummyrace_hispanic), data.(dummysearch_citation))
-[M, dec,stats] = mnrfit(data.(dummyrace_other), data.(dummysearch_citation))
+%new attempt
+%data = data(any('dummyrace_asian'),:);
+%data = data(any('dummysearch_citation'),:);
+predictor1 = dummyrace_asian;
+predictor2 = dummyrace_black;
+predictor3 = dummyrace_white;
+predictor4 = dummyrace_hispanic;
+predictor5 = dummyrace_other;
+dummysearch_citation = categorical(dummysearch_citation);
+predictor_vector = [predictor1, predictor2, predictor3, predictor4];
+[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation);
+% 
+% %trying to see how asian predicts getting a citation but it did not work
+% predictor1 = data.(dummyrace_asian);
+% [M, dev,stats] = mnrfit(dummyrace_asian, dummysearch_citation, 'Model','hierarchical')
+% [M, dev,stats] = mnrfit(dummyrace_black, dummysearch_citation, 'Model','hierarchical')
+% [M, dev,stats] = mnrfit(dummyrace_white, dummysearch_citation, 'Model','hierarchical')
+% [M, dev,stats] = mnrfit(dummyrace_hispanic, dummysearch_citation, 'Model','hierarchical')
+% %[M, dev,stats] = mnrfit(dummyrace_other, dummysearch_citation, 'Model','hierarchical')
+
+%another way we were trying with isabella
+%load data
+%const = ones(height(DataTable),1);
+%DataTable = aadvars(DataTable, Const, Before = 1);
