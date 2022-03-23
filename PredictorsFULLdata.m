@@ -30,16 +30,16 @@ dummysex_female = D_S(:,1);
 dummysex_male = D_S(:,2) ;
 Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysex_male) array2table(dummysex_female)];
 
-%dummy citation v. warning
-citation_warning_columns = data(:,22);
-citation_warning_array = table2array(citation_warning_columns);
-n_citation_warning_array = nominal(citation_warning_array);
-D_CW = dummyvar(n_citation_warning_array);
-
-%dummy search variables
-dummysearch_citation = D_CW(:,1);
-dummysearch_warning = D_CW(:,2) ;
-Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysearch_citation) array2table(dummysearch_warning)];
+% %dummy citation v. warning
+% citation_warning_columns = data(:,22);
+% citation_warning_array = table2array(citation_warning_columns);
+% n_citation_warning_array = nominal(citation_warning_array);
+% D_CW = dummyvar(n_citation_warning_array);
+% 
+% %dummy search variables
+% dummysearch_citation = D_CW(:,1);
+% dummysearch_warning = D_CW(:,2) ;
+% Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysearch_citation) array2table(dummysearch_warning)];
 
 
 %% TIME DUMMY VARIABLES
@@ -54,11 +54,22 @@ time_array = num2str(time_array);
 n_time_array = nominal(time_array);
 D_T = dummyvar(n_time_array);
 
-
 %make dummy variables (Aisha, 3/22 7-7:30PM)
 dummytime_daytime = D_T(:,1);
 dummytime_nighttime = D_T(:,2) ;
 Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummytime_daytime) array2table(dummytime_nighttime)];
+
+
+%dummy violation columns
+violation_columns = data(:,33);
+violation_array = table2array(violation_columns);
+n_violation_array = nominal(violation_array);
+D_V = dummyvar(n_violation_array);
+%%dummy violation variable
+dummyviolation_citation = D_V(:,1);
+dummyviolation_warning = D_V(:,2);
+dummyviolation_ESERO = D_V(:,3);
+Traffic_Violations_Table = [data array2table(dummyviolation_citation) array2table(dummyviolation_warning) array2table(dummyviolation_ESERO)];
 
 
 
@@ -79,37 +90,37 @@ predictor2 = dummyrace_black;
 predictor3 = dummyrace_white;
 predictor4 = dummyrace_hispanic;
 predictor5 = dummyrace_other;
-dummysearch_citation = categorical(dummysearch_citation);
+dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1, predictor2, predictor3, predictor4];
-[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation)
+[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR SEX (MALE)
 predictor1 = dummysex_male;
 predictor2 = dummysex_female;
-dummysearch_citation = categorical(dummysearch_citation);
+dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1];
-[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation)
+[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR SEX (FEMALE)
 predictor1 = dummysex_male;
 predictor2 = dummysex_female;
-dummysearch_citation = categorical(dummysearch_citation);
+dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor2];
-[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation)
+[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR TIME (NIGHT)
 predictor1 = dummytime_nighttime;
 predictor2 = dummytime_daytime;
-dummysearch_citation = categorical(dummysearch_citation);
+dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1];
-[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation)
+[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR TIME (DAY)
 predictor1 = dummytime_nighttime;
 predictor2 = dummytime_daytime;
-dummysearch_citation = categorical(dummysearch_citation);
+dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor2];
-[M, dec,stats] = mnrfit(predictor_vector, dummysearch_citation)
+[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
 
 
 % %trying to see how asian predicts getting a citation but it did not work
