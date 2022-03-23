@@ -103,23 +103,51 @@ xlabel('Time')
 ylabel('Number of People Stopped')
 set(gca,'xticklabel',{'Day','Night'})
 
-%dummy citation v. warning
-citation_warning_columns = data(:,22);
-citation_warning_array = table2array(citation_warning_columns);
-n_citation_warning_array = nominal(citation_warning_array);
-D_CW = dummyvar(n_citation_warning_array);
-disp(D_CW);
-%dummy search variables
-dummysearch_citation = D_CW(:,1);
-dummysearch_warning = D_CW(:,2) ;
-Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysearch_citation) array2table(dummysearch_warning)];
+% %dummy citation v. warning
+% citation_warning_columns = data(:,22);
+% citation_warning_array = table2array(citation_warning_columns);
+% n_citation_warning_array = nominal(citation_warning_array);
+% D_CW = dummyvar(n_citation_warning_array);
+% disp(D_CW);
+% %dummy search variables
+% dummysearch_citation = D_CW(:,1);
+% dummysearch_warning = D_CW(:,2) ;
+% Traffic_Violations_Table = [Traffic_Violations_Table array2table(dummysearch_citation) array2table(dummysearch_warning)];
+% disp(Traffic_Violations_Table)
+% 
+% %sums citations vs warnings
+% sum_searchcitations = sum(dummysearch_citation);
+% sum_searchwarnings = sum(dummysearch_warning);
+
+
+% %bar graph of citations vs warnings
+% subplot(2,2,4)
+% x = 1:2;
+% y = [sum_citations, sum_warnings];
+% l = bar(x,y,.75);
+% l.FaceColor = '#ed872d';
+% title('Citation vs. Warning');
+% xlabel('Outcome');
+% ylabel('Number of People');
+% set(gca,'xticklabel',{'Citation','Warning'})
+
+%dummy violation columns
+violation_columns = data(:,33);
+violation_array = table2array(violation_columns);
+n_violation_array = nominal(violation_array);
+D_V = dummyvar(n_violation_array);
+disp(D_V)
+%%dummy violation variable
+dummyviolation_citation = D_V(:,1);
+dummyviolation_warning = D_V(:,2);
+Traffic_Violations_Table = [data array2table(dummyviolation_citation) array2table(dummyviolation_warning)];
 disp(Traffic_Violations_Table)
 
-%sums citations vs warnings
-sum_citations = sum(dummysearch_citation);
-sum_warnings = sum(dummysearch_warning);
+%sums violations
+sum_citations = sum(dummyviolation_citation)
+sum_warnings = sum(dummyviolation_warning)
 
-%bar graph of citations vs warnings
+%bar graph of violations citations vs warnings
 subplot(2,2,4)
 x = 1:2;
 y = [sum_citations, sum_warnings];
