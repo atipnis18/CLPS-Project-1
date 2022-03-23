@@ -92,35 +92,35 @@ predictor4 = dummyrace_hispanic;
 predictor5 = dummyrace_other;
 dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1, predictor2, predictor3, predictor4];
-[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
+[M_race, dec_race,stats_race] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR SEX (MALE)
 predictor1 = dummysex_male;
 predictor2 = dummysex_female;
 dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1];
-[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
+[M_sex, dec_sex,stats_sex] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR SEX (FEMALE)
 predictor1 = dummysex_male;
 predictor2 = dummysex_female;
 dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor2];
-[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
+[M_sexf, dec_sexf,stats_sexf] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR TIME (NIGHT)
 predictor1 = dummytime_nighttime;
 predictor2 = dummytime_daytime;
 dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1];
-[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
+[M_night, dec_night,stats_night] = mnrfit(predictor_vector, dummyviolation_citation)
 
 %PREDICTORS FOR TIME (DAY)
 predictor1 = dummytime_nighttime;
 predictor2 = dummytime_daytime;
 dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor2];
-[M, dec,stats] = mnrfit(predictor_vector, dummyviolation_citation)
+[M_day, dec_day,stats_day] = mnrfit(predictor_vector, dummyviolation_citation)
 
 
 % %trying to see how asian predicts getting a citation but it did not work
