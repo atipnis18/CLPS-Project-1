@@ -1,7 +1,13 @@
 filename = 'TrafficViolationsALL.csv';
 data = readtable(filename,'PreserveVariableNames',true);
 
-% data cleaning. going to only count the two types of violations
+%Ariana: This plot shows the relationship between the indentities of a
+%hispanic male, hispanic female, white male, and white female and how predictive
+%these identities are on whether a citation was given or not. The graph
+%shows that out of these identities hispanic males were the most predictive
+%followed by hispanic females,white males, then white females
+
+% data cleaning
 all_entries = table2array(data(:,33));
 to_remove = find(strcmp(all_entries,'ESERO'));
 to_remove = [to_remove; find(strcmp(all_entries,'SERO'))];
@@ -32,11 +38,9 @@ violation_columns = data(:,33);
 violation_array = table2array(violation_columns);
 n_violation_array = nominal(violation_array);
 D_V = dummyvar(n_violation_array);
-% for this you won't need the categorical for the predictor.
-% dummyviolation_citation = categorical(D_V(:,1));
+
 [M_raceHSex,dev,stats] = glmfit([dummyrace_hispanic dummysex_female], D_V(:,1),'binomial','link','logit');
-% does this match a simple look at the data?
-% this code is all just for plotting. 
+
 hispanic_men = data(find(strcmp(table2array(data(:,37)),'HISPANIC') & strcmp(table2array(data(:,38)),'M')),33);
 white_men = data(find(strcmp(table2array(data(:,37)),'WHITE') & strcmp(table2array(data(:,38)),'M')),33);
 hispanic_female = data(find(strcmp(table2array(data(:,37)),'HISPANIC') & strcmp(table2array(data(:,38)),'F')),33);
@@ -52,7 +56,6 @@ pct_citations_wf = n_citations_wf / (n_citations_wf+n_warnings_wf);
 figure
 bar([1 2 3 4], [pct_citations_hm pct_citations_wm pct_citations_hf pct_citations_wf])
 xticks([1 2 3 4]); xticklabels({'hispanic male', 'white male','hispanic female','white female'})
-%title(['model beta: hispanic ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
 title('Hispanic vs. White in Regards to Sex Predictability');
 xlabel('Identities');
 ylabel('Predictability');
