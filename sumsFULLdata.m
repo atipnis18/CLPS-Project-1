@@ -1,6 +1,9 @@
 filename = 'TrafficViolationsALL.csv';
 data = readtable(filename,'PreserveVariableNames',true);
 
+%this file uses the dummy columns to find sums of each identity. These sums
+%are then placed next to each other to be compared.
+
 %% RACE DUMMY VARIABLES
 
 %make dummy columns (Aisha, 3/21 2PM-4PM)
