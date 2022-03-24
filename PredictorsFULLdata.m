@@ -168,3 +168,6 @@ dummyviolation_citation = categorical(dummyviolation_citation);
 predictor_vector = [predictor1, predictor2];
 [M_hispmale, dec_hispmale,stats_hispmale] = mnrfit(predictor_vector, dummyviolation_citation)
 
+%ATTEMPTING TIME AND SEX
+[M_sexTime,dev_sexTime,stats_sexTime] = glmfit([dummytime_daytime dummysex_male], D_T(:,1),'binomial','link','logit');
+%% --> found that gender and time don't have a significant relationship
