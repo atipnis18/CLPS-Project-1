@@ -8,8 +8,7 @@ An interesting point to note is that racial categories and sex categories are as
 <img width="542" alt="Screen Shot 2022-03-24 at 7 14 26 PM" src="https://user-images.githubusercontent.com/101379301/160025032-db7f186d-6963-45a3-9d28-3d507d8d9dee.png">
 
 
-
-This plot shows the relationship between the indentities of a black male, black female, white male, and white female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities black male is the most predictive, then a black female, then a white male, and the least is a white female (code can be found under file Haleyplotting.m).
+This plot shows the relationship between the indentities of a hispanic male, hispanic female, white male, and white female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive followed by hispanic females, white males, then white females. (code can be found under file hispanicwhitemalefemale.m)
 <img width="537" alt="Screen Shot 2022-03-24 at 6 42 43 PM" src="https://user-images.githubusercontent.com/101379301/160024774-6fcd9d34-27e7-4fa6-9239-c77890dd4859.png">
 
 
@@ -30,6 +29,6 @@ This plot shows the relationship between the indentities of a hispanic male, his
 
 
 
-
+This plot shows the relationship between the indentities of a black male, black female, white male, and white female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities black male is the most predictive, then a black female, then a white male, and the least is a white female (code can be found under file Haleyplotting.m).
 <img width="554" alt="Screen Shot 2022-03-24 at 6 23 15 PM" src="https://user-images.githubusercontent.com/101379301/160024801-c549385d-05b6-48d7-90b5-db3a46e79b47.png">
 <img width="549" alt="Screen Shot 2022-03-24 at 6 30 47 PM" src="https://user-images.githubusercontent.com/101379301/160024805-57e7ba16-5449-4dac-868e-3b4e2ad11ddb.png">
