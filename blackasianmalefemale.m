@@ -58,4 +58,7 @@ pct_citations_af = n_citations_af / (n_citations_af+n_warnings_af);
 figure;
 bar([1 2 3 4], [pct_citations_bm pct_citations_wm pct_citations_bf pct_citations_wf])
 xticks([1 2 3 4]); xticklabels({'black male', 'asian male','black female','asian female'})
-title(['model beta: black ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+%title(['model beta: black ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+title('Black vs. Asian in Regards to Sex Predictability');
+xlabel('Identities');
+ylabel('Predictability');
