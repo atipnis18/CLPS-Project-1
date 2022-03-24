@@ -1,15 +1,18 @@
 filename = 'TrafficViolationsALL.csv';
 data = readtable(filename,'PreserveVariableNames',true);
 
+%Camila: This plot shows the relationship between the indentities of a
+%black male, black female, asian male, and asian female and how predictive
+%these identities are on whether a citation was given or not. The graph
+%shows that out of these identities black male was the most predictive,
+%then black female, then asian male, and lastly asian female
+
 % cleaning the data
 all_entries = table2array(data(:,33));
 to_remove = find(strcmp(all_entries,'ESERO'));
 to_remove = [to_remove; find(strcmp(all_entries,'SERO'))];
 data(to_remove,:) = []; % deleting ESERO and SERO rows
-% simplify to check our math so we can do a visual check -- you should take
-% this out once you validate, and add back in the other columns.
-% you can run unique(n_race_array) to see the order of the variables in
-% n_race_array, for example. will generally be alphabetical.
+
 all_entries = table2array(data(:,37));
 to_remove = find(strcmp(all_entries,'WHITE'));
 to_remove = [to_remove; find(strcmp(all_entries,'HISPANIC'))];
@@ -58,7 +61,6 @@ pct_citations_af = n_citations_af / (n_citations_af+n_warnings_af);
 figure;
 bar([1 2 3 4], [pct_citations_bm pct_citations_wm pct_citations_bf pct_citations_wf])
 xticks([1 2 3 4]); xticklabels({'black male', 'asian male','black female','asian female'})
-%title(['model beta: black ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
 title('Black vs. Asian in Regards to Sex Predictability');
 xlabel('Identities');
 ylabel('Predictability');
