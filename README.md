@@ -8,15 +8,19 @@ An interesting point to note is that racial categories and sex categories are as
 <img width="542" alt="Screen Shot 2022-03-24 at 7 14 26 PM" src="https://user-images.githubusercontent.com/101379301/160025032-db7f186d-6963-45a3-9d28-3d507d8d9dee.png">
 
 
+
 This plot shows the relationship between the indentities of a black male, black female, white male, and white female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities black male is the most predictive, then a black female, then a white male, and the least is a white female (code can be found under file Haleyplotting.m).
 <img width="537" alt="Screen Shot 2022-03-24 at 6 42 43 PM" src="https://user-images.githubusercontent.com/101379301/160024774-6fcd9d34-27e7-4fa6-9239-c77890dd4859.png">
+
 
 
 This plot shows the relationship between the indentities of a black male, black female, asian male, and asian female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities black male was the most predictive,then black female, then asian male, and lastly asian female (code can be found under file blackasianmalefemale.m)
 <img width="545" alt="Screen Shot 2022-03-24 at 6 49 55 PM" src="https://user-images.githubusercontent.com/101379301/160024794-a99682f6-1e2f-4143-82e3-a5cd9d0b84dc.png">
 
 
-This plot shows the relationship between the indentities of a black male, black female, hispanic male, and hispanic female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive of a citation followed by black males, hispanic women, and lastly black women (code can be found under file blackhispanicmalefemale.m).
+
+This plot shows the relationship between the indentities of a black male, black female, hispanic male, and hispanic female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive of a citation followed by black males, hispanic women, and lastly black women (code can be found under file blackhispanicmalefemale.m)
+
 <img width="550" alt="Screen Shot 2022-03-24 at 7 00 21 PM" src="https://user-images.githubusercontent.com/101379301/160024796-82eed242-813f-46b4-ae25-d9e32323f903.png">
 
 
