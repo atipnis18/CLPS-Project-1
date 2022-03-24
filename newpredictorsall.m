@@ -156,3 +156,6 @@ predictor3 = dummysex_female;
 predictor_vector = [predictor1, predictor2];
 [M_hispmale, dec_hispmale,stats_hispmale] = glmfit(predictor_vector, D_V(:,1),'binomial','link','logit')
 
+%SEX and TIME
+[M_sexTime,dev_sexTime,stats_sexTime] = glmfit([dummytime_daytime dummysex_male], D_T(:,1),'binomial','link','logit');
+%% --> found that gender and time don't have a significant relationship
