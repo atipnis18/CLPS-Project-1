@@ -26,4 +26,7 @@ pct_citations_bf = n_citations_bf / (n_citations_bf+n_warnings_bf);
 figure;
 bar([1 2 3 4], [pct_citations_hm pct_citations_bm pct_citations_hf pct_citations_bf])
 xticks([1 2 3 4]); xticklabels({'hispanic male', 'black male','hispanic female','black female'})
-title(['model beta: hispanic ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+%title(['model beta: hispanic ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+title('Black vs. Hispanic in Regards to Sex Predictability');
+xlabel('Identities');
+ylabel('Predictability');
