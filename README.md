@@ -6,7 +6,7 @@ We also illustrate that intersections between racial identity, sex, and time of 
 An interesting point to note is that racial categories and sex categories are assigned to individuals by the police officer -- for example, drivers labelled "Hispanic" are *racialized* as "Hispanic" by the police officer themselves. Given this example, drivers who are not visually profiled as "Hispanic" racially (despite Hispanic being an ethnic group) could still identify as Hispanic. Race, particularly, is not inherent to an individual, but *assigned*.  !
 
 
-This plot displays 4 different subplots outlining the distribution thoughout the data set of each predictor including race, gender, time, and type of violation.
+This plot displays 4 different subplots outlining the distribution thoughout the data set of each predictor including race, gender, time, and type of violation. To create these graphs we found the sum of each attribute for the predictors and placed them next to each other to see how they compare. (code for these graphs can be found under file sumsFULLdata.m)
 
 <img width="542" alt="Screen Shot 2022-03-24 at 7 14 26 PM" src="https://user-images.githubusercontent.com/101379301/160025032-db7f186d-6963-45a3-9d28-3d507d8d9dee.png">
 
