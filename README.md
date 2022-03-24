@@ -9,6 +9,7 @@ An interesting point to note is that racial categories and sex categories are as
 
 
 This plot shows the relationship between the indentities of a hispanic male, hispanic female, white male, and white female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive followed by hispanic females, white males, then white females. (code can be found under file hispanicwhitemalefemale.m)
+
 <img width="537" alt="Screen Shot 2022-03-24 at 6 42 43 PM" src="https://user-images.githubusercontent.com/101379301/160024774-6fcd9d34-27e7-4fa6-9239-c77890dd4859.png">
 
 
