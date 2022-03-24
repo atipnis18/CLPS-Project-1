@@ -39,11 +39,9 @@ violation_columns = data(:,33);
 violation_array = table2array(violation_columns);
 n_violation_array = nominal(violation_array);
 D_V = dummyvar(n_violation_array);
-% for this you won't need the categorical for the predictor.
-% dummyviolation_citation = categorical(D_V(:,1));
 
 [M_raceSex,dev,stats] = glmfit([dummyrace_black dummysex_female], D_V(:,1),'binomial','link','logit');
-% does this match a simple look at the data?
+
 % this code is all just for plotting. 
 black_men = data(find(strcmp(table2array(data(:,37)),'BLACK') & strcmp(table2array(data(:,38)),'M')),33);
 white_men = data(find(strcmp(table2array(data(:,37)),'WHITE') & strcmp(table2array(data(:,38)),'M')),33);
@@ -60,4 +58,7 @@ pct_citations_wf = n_citations_wf / (n_citations_wf+n_warnings_wf);
 figure;
 bar([1 2 3 4], [pct_citations_bm pct_citations_wm pct_citations_bf pct_citations_wf])
 xticks([1 2 3 4]); xticklabels({'black male', 'white male','black female','white female'})
-title(['model beta: black ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+%title(['model beta: black ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
+title('Black vs. White in Regards to Sex Predictability');
+xlabel('Identities');
+ylabel('Predictability');
