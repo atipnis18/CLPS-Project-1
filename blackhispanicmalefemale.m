@@ -1,6 +1,13 @@
 filename = 'TrafficViolationsALL.csv';
 data = readtable(filename,'PreserveVariableNames',true);
 
+%Ariana: This plot shows the relationship between the indentities of a
+%black male, black female, hispanic male, and hispanic female and how predictive
+%these identities are on whether a citation was given or not. The graph
+%shows that out of these identities hispanic males were the most predictive
+%of a citation followed by black males, hispanic women, and lastly black
+%women
+
 
 % data cleaning. going to only count the two types of violations
 all_entries = table2array(data(:,33));
@@ -26,7 +33,6 @@ pct_citations_bf = n_citations_bf / (n_citations_bf+n_warnings_bf);
 figure;
 bar([1 2 3 4], [pct_citations_hm pct_citations_bm pct_citations_hf pct_citations_bf])
 xticks([1 2 3 4]); xticklabels({'hispanic male', 'black male','hispanic female','black female'})
-%title(['model beta: hispanic ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
 title('Black vs. Hispanic in Regards to Sex Predictability');
 xlabel('Identities');
 ylabel('Predictability');
