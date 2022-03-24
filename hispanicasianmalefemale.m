@@ -1,8 +1,13 @@
 filename = 'TrafficViolationsALL.csv';
 data = readtable(filename,'PreserveVariableNames',true);
 
-data = readtable(filename,'PreserveVariableNames',true);
-% data cleaning. going to only count the two types of violations
+%Ariana: This plot shows the relationship between the indentities of a
+%hispanic male, hispanic female, asian male, and asian female and how predictive
+%these identities are on whether a citation was given or not. The graph
+%shows that out of these identities hispanic males were the most predictive
+%followed by hispanic females, then asian males, then asian females. 
+
+% data cleaning
 all_entries = table2array(data(:,33));
 to_remove = find(strcmp(all_entries,'ESERO'));
 to_remove = [to_remove; find(strcmp(all_entries,'SERO'))];
@@ -26,5 +31,6 @@ pct_citations_af = n_citations_af / (n_citations_af+n_warnings_af);
 figure;
 bar([1 2 3 4], [pct_citations_hm pct_citations_am pct_citations_hf pct_citations_af])
 xticks([1 2 3 4]); xticklabels({'hispanic male', 'asian male','hispanic female','asian female'})
-title(['model beta: hispanic ' num2str(M_raceSex(2)) '  |||||   model beta: female ' num2str(M_raceSex(3))])
-
+title('Asian vs. Hispanic in Regards to Sex Predictability');
+xlabel('Identities');
+ylabel('Predictability');
