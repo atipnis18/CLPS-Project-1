@@ -31,7 +31,7 @@ This plot shows the relationship between the indentities of a black male, black 
 <img width="550" alt="Screen Shot 2022-03-24 at 7 00 21 PM" src="https://user-images.githubusercontent.com/101379301/160024796-82eed242-813f-46b4-ae25-d9e32323f903.png">
 
 
-This plot shows the relationship between the indentities of a hispanic male, hispanic female, asian male, and asian female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive followed by hispanic females, then asian males, then asian females. (code can be found under file hispanicasianmalefemale.m)
+This plot shows the relationship between the identities of a hispanic male, hispanic female, asian male, and asian female and how predictive these identities are on whether a citation was given or not. The graph shows that out of these identities hispanic males were the most predictive followed by hispanic females, then asian males, then asian females. (code can be found under file hispanicasianmalefemale.m)
 
 <img width="558" alt="Screen Shot 2022-03-24 at 7 05 58 PM" src="https://user-images.githubusercontent.com/101379301/160024800-cdbfb8d4-1698-42d1-b2fa-42931cbeec11.png">
 
